@@ -13,7 +13,7 @@ import {
 
 import useStyles from "./styles";
 
-export default function SingleCard() {
+const SingleCard = () => {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
@@ -44,4 +44,6 @@ export default function SingleCard() {
       </CardActions>
     </Card>
   );
-}
+};
+
+export default SingleCard;
