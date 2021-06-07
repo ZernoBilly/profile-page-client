@@ -1,15 +1,18 @@
+import { blue, red } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles({
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
   title: {
-    fontSize: 14,
+    fontSize: 22,
   },
   pos: {
     marginBottom: 12,
+  },
+  media: {
+    height: 140,
+    //paddingTop: "56.25%", // 16:9
+  },
+  avatar: {
+    backgroundColor: blue[500],
   },
 });
