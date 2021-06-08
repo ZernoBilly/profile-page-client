@@ -13,10 +13,10 @@ import {
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import useStyles from "./styles";
+import testImage from "./images/test-image.jpg";
 
 const SingleCard = () => {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card>
@@ -36,8 +36,7 @@ const SingleCard = () => {
       />
       <CardMedia
         className={classes.media}
-        component="img"
-        image="./img.jpg"
+        image={testImage}
         title="Project picture"
       />
       <CardContent>
