@@ -6,4 +6,12 @@ export default makeStyles({
     height: 0,
     paddingTop: "56.25%",
   },
+  card: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    borderRadius: "15px",
+    //height: "100%",
+    position: "relative",
+  },
 });

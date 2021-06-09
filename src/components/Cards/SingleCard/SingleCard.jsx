@@ -19,7 +19,7 @@ const SingleCard = () => {
   const classes = useStyles();
 
   return (
-    <Card>
+    <Card className={classes.card}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
