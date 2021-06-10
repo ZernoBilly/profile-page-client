@@ -1,15 +1,19 @@
 import * as api from "../api";
 
-// Action Creators
+//Actions
+
+//Get all Project Cards
 export const getCards = () => async (dispatch) => {
   try {
     const { data } = await api.fetchCard();
+
     dispatch({ type: "FETCH_ALL", payload: data });
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 };
 
+//Create new Project Card
 export const createCard = (card) => async (dispatch) => {
   try {
     const { data } = await api.createCard(card);
@@ -19,3 +23,16 @@ export const createCard = (card) => async (dispatch) => {
     console.log(error);
   }
 };
+
+//Update Project Card
+export const updateCard = (id, card) => async (dispatch) => {
+  try {
+    const { data } = await api.updateCard(id, card);
+
+    dispatch({ type: "UPDATE", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//Dispatched to ./reducers

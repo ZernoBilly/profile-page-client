@@ -1,24 +1,35 @@
 import { Paper, TextField, Button, Typography } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FileBase from "react-file-base64";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import useStyles from "./styles";
-import { createCard } from "../../actions/cards";
+import { createCard, updateCard } from "../../actions/cards";
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }) => {
   const [cardData, setCardData] = useState({
     title: "",
     description: "",
     selectedFile: "",
   });
+  const card = useSelector((state) =>
+    currentId ? state.cards.find((c) => c._id === currentId) : null
+  );
   const classes = useStyles();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (card) setCardData(card);
+  }, [card]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createCard(cardData));
+    if (currentId) {
+      dispatch(updateCard(currentId, cardData));
+    } else {
+      dispatch(createCard(cardData));
+    }
   };
 
   const clear = () => {};

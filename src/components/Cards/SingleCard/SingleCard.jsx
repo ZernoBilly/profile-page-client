@@ -6,48 +6,46 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
-  Avatar,
   IconButton,
   Button,
 } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import moment from "moment";
 
 import useStyles from "./styles";
-import testImage from "./images/test-image.jpg";
 
-const SingleCard = () => {
+const SingleCard = ({ card, setCurrentId }) => {
   const classes = useStyles();
 
   return (
     <Card className={classes.card}>
       <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            php
-          </Avatar>
-        }
         action={
-          <IconButton aria-label="settings">
+          <IconButton
+            aria-label="settings"
+            onClick={() => setCurrentId(card._id)}
+          >
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={card.title}
+        subheader={moment(card.date).fromNow()}
       />
       <CardMedia
         className={classes.media}
-        image={testImage}
-        title="Project picture"
+        image={card.selectedFile}
+        title={card.title}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          {card.description}
         </Typography>
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
+        <Button size="small" onClick={() => {}}>
+          Delete
+        </Button>
       </CardActions>
     </Card>
   );
