@@ -12,16 +12,20 @@ const Form = ({ currentId, setCurrentId }) => {
     description: "",
     selectedFile: "",
   });
+  //Fetch data from updated post
   const card = useSelector((state) =>
     currentId ? state.cards.find((c) => c._id === currentId) : null
   );
+
   const classes = useStyles();
   const dispatch = useDispatch();
 
+  //Populates the Form data fields
   useEffect(() => {
     if (card) setCardData(card);
   }, [card]);
 
+  //Submit Form input field
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -30,9 +34,14 @@ const Form = ({ currentId, setCurrentId }) => {
     } else {
       dispatch(createCard(cardData));
     }
+    clear();
   };
 
-  const clear = () => {};
+  //Clear input fiels
+  const clear = () => {
+    setCurrentId(null);
+    setCardData({ title: "", description: "", selectedFile: "" });
+  };
 
   return (
     <Paper className={classes.paper}>
@@ -42,7 +51,9 @@ const Form = ({ currentId, setCurrentId }) => {
         noValidate
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">Create new Project</Typography>
+        <Typography variant="h6">
+          {currentId ? "Edit" : "Create new"} Project
+        </Typography>
         <TextField
           name="title"
           fullWidth

@@ -6,7 +6,7 @@ import SingleCard from "./SingleCard/SingleCard";
 import useStyles from "./styles";
 
 const Cards = ({ setCurrentId }) => {
-  const cards = useSelector((state) => state.cards);
+  const cards = useSelector((state) => state.cards); //Fetch data from all cards
   const classes = useStyles();
 
   console.log(cards);

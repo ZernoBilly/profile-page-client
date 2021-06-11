@@ -11,11 +11,16 @@ import {
 } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import moment from "moment";
+import { useDispatch } from "react-redux";
+
+//Action to Delete button
+import { deleteCard } from "../../../actions/cards";
 
 import useStyles from "./styles";
 
 const SingleCard = ({ card, setCurrentId }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <Card className={classes.card}>
@@ -43,7 +48,7 @@ const SingleCard = ({ card, setCurrentId }) => {
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
-        <Button size="small" onClick={() => {}}>
+        <Button size="small" onClick={() => dispatch(deleteCard(card._id))}>
           Delete
         </Button>
       </CardActions>

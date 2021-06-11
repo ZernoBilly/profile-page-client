@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getCards());
-  }, [dispatch]);
+  }, [currentId, dispatch]);
 
   return (
     <Container maxWidth="lg">
