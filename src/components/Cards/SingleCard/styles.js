@@ -14,4 +14,11 @@ export default makeStyles({
     //height: "100%",
     position: "relative",
   },
+  header: {
+    marginLeft: "8%",
+    textAlign: "center",
+  },
+  buttons: {
+    justifyContent: "space-between",
+  },
 });

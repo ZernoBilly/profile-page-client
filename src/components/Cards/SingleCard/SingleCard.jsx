@@ -10,6 +10,9 @@ import {
   Button,
 } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
+import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
+
 import moment from "moment";
 import { useDispatch } from "react-redux";
 
@@ -25,13 +28,11 @@ const SingleCard = ({ card, setCurrentId }) => {
   return (
     <Card className={classes.card}>
       <CardHeader
+        className={classes.header}
         action={
-          <IconButton
-            aria-label="settings"
-            onClick={() => setCurrentId(card._id)}
-          >
-            <MoreVertIcon />
-          </IconButton>
+          <Button onClick={() => setCurrentId(card._id)}>
+            <EditOutlinedIcon />
+          </Button>
         }
         title={card.title}
         subheader={moment(card.date).fromNow()}
@@ -46,8 +47,10 @@ const SingleCard = ({ card, setCurrentId }) => {
           {card.description}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions className={classes.buttons}>
         <Button size="small">Learn More</Button>
+      </CardActions>
+      <CardActions className={classes.buttons}>
         <Button size="small" onClick={() => dispatch(deleteCard(card._id))}>
           Delete
         </Button>
