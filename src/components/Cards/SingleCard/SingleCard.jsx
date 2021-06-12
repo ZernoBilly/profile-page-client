@@ -60,13 +60,15 @@ const SingleCard = ({ card, setCurrentId }) => {
                   setCurrentId(card._id);
                   handleClose();
                 }}
-                //onClick={handleClose}
               >
                 <EditOutlinedIcon />
               </MenuItem>
               <MenuItem
-                onClick={handleClose}
-                onClick={() => dispatch(deleteCard(card._id))}
+                //onClick={handleClose}
+                onClick={() => {
+                  dispatch(deleteCard(card._id));
+                  handleClose();
+                }}
               >
                 <DeleteForeverOutlinedIcon />
               </MenuItem>
@@ -88,6 +90,7 @@ const SingleCard = ({ card, setCurrentId }) => {
       </CardContent>
       <CardActions className={classes.buttons}>
         <Button size="small">Learn More</Button>
+        <Button size="small">Source Code</Button>
       </CardActions>
     </Card>
   );
