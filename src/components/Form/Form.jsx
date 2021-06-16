@@ -6,7 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import useStyles from "./styles";
 import { createCard, updateCard } from "../../actions/cards";
 
-const Form = ({ currentId, setCurrentId }) => {
+const Form = ({ currentId, setCurrentId, setFormOpen }) => {
+  const classes = useStyles();
+  const dispatch = useDispatch();
+
   const [cardData, setCardData] = useState({
     title: "",
     description: "",
@@ -17,8 +20,10 @@ const Form = ({ currentId, setCurrentId }) => {
     currentId ? state.cards.find((c) => c._id === currentId) : null
   );
 
-  const classes = useStyles();
-  const dispatch = useDispatch();
+  //Handle Form open
+  const handleClose = () => {
+    setFormOpen(false);
+  };
 
   //Populates the Form data fields
   useEffect(() => {
@@ -80,7 +85,12 @@ const Form = ({ currentId, setCurrentId }) => {
             }
           />
         </div>
-        <Button variant="contained" type="submit" fullWidth>
+        <Button
+          variant="contained"
+          type="submit"
+          fullWidth
+          onClick={handleClose}
+        >
           Submit
         </Button>
         <Button variant="contained" onClick={clear} fullWidth>

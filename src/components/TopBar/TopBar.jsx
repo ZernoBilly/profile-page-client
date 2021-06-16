@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -24,8 +25,20 @@ const TopBar = () => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography className={classes.title}>This is header</Typography>
-        <Button color="inherit">Login</Button>
+        <Typography className={classes.title} component={Link} to="/">
+          This is header
+        </Typography>
+        <Button
+          color="inherit"
+          component={Link}
+          to="/Form"
+          className={classes.createButton}
+        >
+          Create
+        </Button>
+        <Button color="inherit" className={classes.loginButton}>
+          Login
+        </Button>
       </Toolbar>
     </AppBar>
   );

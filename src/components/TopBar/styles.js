@@ -4,10 +4,16 @@ export default makeStyles((theme) => ({
   AppBar: {
     borderRadius: "15px",
   },
+  title: {
+    flexGrow: 1,
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  title: {
-    flexGrow: 1,
+  createButton: {
+    marginRight: theme.spacing(2),
+  },
+  loginButton: {
+    marginRight: theme.spacing(2),
   },
 }));

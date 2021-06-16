@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   Typography,
@@ -22,7 +23,7 @@ import { deleteCard } from "../../../actions/cards";
 
 import useStyles from "./styles";
 
-const SingleCard = ({ card, setCurrentId }) => {
+const SingleCard = ({ card, setCurrentId, setFormOpen }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -37,6 +38,11 @@ const SingleCard = ({ card, setCurrentId }) => {
   //Header menu close
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  //Form open
+  const handleClickOpen = () => {
+    setFormOpen(true);
   };
 
   return (
@@ -58,6 +64,7 @@ const SingleCard = ({ card, setCurrentId }) => {
               <MenuItem
                 onClick={() => {
                   setCurrentId(card._id);
+                  handleClickOpen();
                   handleClose();
                 }}
               >
