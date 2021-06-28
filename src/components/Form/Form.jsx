@@ -53,7 +53,13 @@ const Form = ({ currentId, setCurrentId, setFormOpen }) => {
   //Clear input fiels
   const clear = () => {
     setCurrentId(null);
-    setCardData({ title: "", description: "", selectedFile: "" });
+    setCardData({
+      title: "",
+      description: "",
+      selectedFile: "",
+      url: "",
+      gitHub: "",
+    });
   };
 
   return (
@@ -66,8 +72,14 @@ const Form = ({ currentId, setCurrentId, setFormOpen }) => {
       <DialogTitle className={classes.title} variant="h6">
         {currentId ? "Edit" : "Create new"} Project
       </DialogTitle>
-      <DialogActions>
-        <IconButton className={classes.exitButton} onClick={handleClose}>
+      <DialogActions className={classes.titleButton}>
+        <IconButton
+          className={classes.exitButton}
+          onClick={() => {
+            handleClose();
+            clear();
+          }}
+        >
           <ClearOutlinedIcon fontSize="small" />
         </IconButton>
       </DialogActions>
@@ -97,7 +109,7 @@ const Form = ({ currentId, setCurrentId, setFormOpen }) => {
         />
         <TextField
           className={classes.textField}
-          name="linkToProject"
+          name="url"
           fullWidth
           variant="filled"
           label="Project URL"
@@ -108,10 +120,10 @@ const Form = ({ currentId, setCurrentId, setFormOpen }) => {
         />
         <TextField
           className={classes.textField}
-          name="linkToGithub"
+          name="gitHub"
           fullWidth
           variant="filled"
-          label="GitHub"
+          label="GitHub repository"
           value={cardData.description}
           onChange={(e) =>
             setCardData({ ...cardData, description: e.target.value })
