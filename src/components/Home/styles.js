@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
   titleImage: {
-    height: "80%",
+    dispay: "flex",
   },
 }));

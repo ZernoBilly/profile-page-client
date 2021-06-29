@@ -96,8 +96,12 @@ const SingleCard = ({ card, setCurrentId, setFormOpen }) => {
         </Typography>
       </CardContent>
       <CardActions className={classes.buttons}>
-        <Button size="small">Learn More</Button>
-        <Button size="small">Source Code</Button>
+        <Button size="small" href={card.url} target="_blank">
+          Learn More
+        </Button>
+        <Button size="small" href={card.gitHub} target="_blank">
+          Source Code
+        </Button>
       </CardActions>
     </Card>
   );

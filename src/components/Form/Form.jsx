@@ -113,10 +113,8 @@ const Form = ({ currentId, setCurrentId, setFormOpen }) => {
           fullWidth
           variant="filled"
           label="Project URL"
-          value={cardData.description}
-          onChange={(e) =>
-            setCardData({ ...cardData, description: e.target.value })
-          }
+          value={cardData.url}
+          onChange={(e) => setCardData({ ...cardData, url: e.target.value })}
         />
         <TextField
           className={classes.textField}
@@ -124,10 +122,8 @@ const Form = ({ currentId, setCurrentId, setFormOpen }) => {
           fullWidth
           variant="filled"
           label="GitHub repository"
-          value={cardData.description}
-          onChange={(e) =>
-            setCardData({ ...cardData, description: e.target.value })
-          }
+          value={cardData.gitHub}
+          onChange={(e) => setCardData({ ...cardData, gitHub: e.target.value })}
         />
 
         <div className={classes.fileSelector}>

@@ -15,7 +15,7 @@ const TopBar = () => {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" className={classes.AppBar}>
+    <AppBar position="sticky" className={classes.AppBar}>
       <Toolbar>
         <IconButton
           edge="start"
