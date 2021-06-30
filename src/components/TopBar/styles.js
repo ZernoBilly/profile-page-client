@@ -7,6 +7,7 @@ export default makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    underline: "none",
     marginLeft: "20px",
   },
   menuButton: {

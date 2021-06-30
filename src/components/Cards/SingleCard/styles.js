@@ -11,8 +11,8 @@ export default makeStyles({
     flexDirection: "column",
     justifyContent: "space-between",
     borderRadius: "15px",
-    //height: "100%",
     position: "relative",
+    backgroundColor: "#FAF0DC",
   },
   header: {
     marginLeft: "8%",
@@ -20,5 +20,10 @@ export default makeStyles({
   },
   buttons: {
     justifyContent: "space-between",
+    color: "#1BA098",
   },
+  menu: {
+    color: "#1BA098",
+  },
+  menuButton: {},
 });

@@ -12,9 +12,9 @@ import Image from "material-ui-image";
 
 import Cards from "../Cards/Cards";
 import Form from "../Form/Form";
+import Header from "../Header/Header";
 import { getCards } from "../../actions/cards";
 import useStyles from "./styles";
-import titleImage from "../../images/titlepic1.jpg";
 
 const Home = () => {
   const [currentId, setCurrentId] = useState(null);
@@ -36,6 +36,7 @@ const Home = () => {
 
   return (
     <Container MaxWidth="lg">
+      <Header />
       <Grow in>
         <Grid
           container
@@ -43,12 +44,6 @@ const Home = () => {
           alignItems="stretch"
           spacing={1}
         >
-          <Grid item xs={12} sm={12} lg={12}>
-            <div className={classes.titleImage}>
-              <Image src={titleImage} aspectRatio="1/1.3" cover="true"></Image>
-              <Typography>Otsikko</Typography>
-            </div>
-          </Grid>
           <Grid item xs={12} sm={12} className={classes.cards}>
             <Cards setCurrentId={setCurrentId} setFormOpen={setFormOpen} />
           </Grid>

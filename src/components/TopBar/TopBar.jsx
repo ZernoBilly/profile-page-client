@@ -15,7 +15,7 @@ const TopBar = () => {
   const classes = useStyles();
 
   return (
-    <AppBar position="sticky" className={classes.AppBar}>
+    <AppBar position="sticky" className={classes.AppBar} elevation={0}>
       <Toolbar>
         <IconButton
           edge="start"
@@ -25,17 +25,15 @@ const TopBar = () => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography className={classes.title} component={Link} to="/">
+        <Typography
+          className={classes.title}
+          component={Link}
+          to="/"
+          variant="h6"
+        >
           This is header
         </Typography>
-        <Button
-          color="inherit"
-          component={Link}
-          to="/Form"
-          className={classes.createButton}
-        >
-          Create
-        </Button>
+
         <Button color="inherit" className={classes.loginButton}>
           Login
         </Button>
