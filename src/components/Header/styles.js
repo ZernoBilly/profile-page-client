@@ -9,16 +9,17 @@ export default makeStyles((theme) => ({
     height: "70vh",
   },
   title: {
-    color: "#DEB992",
+    color: theme.palette.secondary.main,
+    fontFamily: "Poiret One",
   },
   lowerTitle: {
-    color: "#DEB992",
+    color: theme.palette.secondary.main,
   },
   coloredTitle: {
-    color: "#12706a",
+    color: theme.palette.optional.main,
   },
   downButton: {
-    marginTop: "15rem",
+    marginTop: "20rem",
     color: "#1BA098",
     width: "5rem",
   },

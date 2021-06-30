@@ -105,10 +105,23 @@ const SingleCard = ({ card, setCurrentId, setFormOpen, checked }) => {
           </Typography>
         </CardContent>
         <CardActions className={classes.buttons}>
-          <Button size="small" href={card.url} target="_blank">
+          <Button
+            variant="contained"
+            className={classes.buttons}
+            size="small"
+            href={card.url}
+            target="_blank"
+            //color="secondary"
+          >
             Learn More
           </Button>
-          <Button size="small" href={card.gitHub} target="_blank">
+          <Button
+            variant="contained"
+            size="small"
+            href={card.gitHub}
+            target="_blank"
+            //color="secondary"
+          >
             Source Code
           </Button>
         </CardActions>

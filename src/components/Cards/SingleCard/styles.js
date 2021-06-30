@@ -1,7 +1,7 @@
 import { blue, red } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
 
-export default makeStyles({
+export default makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: "56.25%",
@@ -12,18 +12,19 @@ export default makeStyles({
     justifyContent: "space-between",
     borderRadius: "15px",
     position: "relative",
-    backgroundColor: "#FAF0DC",
+    backgroundColor: theme.palette.secondary.extraLight,
   },
   header: {
     marginLeft: "8%",
     textAlign: "center",
+    color: theme.palette.primary.dark,
   },
   buttons: {
     justifyContent: "space-between",
-    color: "#1BA098",
+    //color: theme.palette.info.main,
   },
   menu: {
     color: "#1BA098",
   },
   menuButton: {},
-});
+}));
