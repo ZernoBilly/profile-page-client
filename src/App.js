@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./components/Home/Home";
 import Form from "./components/Form/Form";
+import Footer from "./components/Footer/Footer";
 
 import useStyles from "./styles";
 import theme from "./theme";
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/form" component={Form} />
           </Switch>
         </Container>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );

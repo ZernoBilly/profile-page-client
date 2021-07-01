@@ -1,21 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles({
-  form: {
+  gridContainer: {
     display: "flex",
-    flexWrap: "wrap",
     justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    height: "10rem",
   },
-
-  title: {},
-
-  exitButton: {
-    float: "right",
-  },
-
-  textField: {},
-
-  fileSelector: {
-    paddingTop: "15px",
+  divider: {
+    fontSize: "2rem",
   },
 });

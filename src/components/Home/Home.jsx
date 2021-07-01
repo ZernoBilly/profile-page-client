@@ -15,6 +15,8 @@ import Cards from "../Cards/Cards";
 import Form from "../Form/Form";
 import Header from "../Header/Header";
 import SideMenu from "../SideMenu/SideMenu";
+import Description from "../Description/Description";
+
 import { getCards } from "../../actions/cards";
 import useStyles from "./styles";
 
@@ -38,7 +40,7 @@ const Home = () => {
     dispatch(getCards());
   }, [currentId, dispatch]);
 
-  //Drawer open handler
+  //Side menu toggle handler
   const [sideMenuOpen, setSidemenuOpen] = useState(false);
 
   const toggleSideMenu = (open) => (event) => {
@@ -51,6 +53,7 @@ const Home = () => {
       <SideMenu toggleSideMenu={toggleSideMenu} sideMenuOpen={sideMenuOpen} />
       <Container MaxWidth="lg">
         <Header />
+        <Description />
         <Grow in>
           <Grid
             container

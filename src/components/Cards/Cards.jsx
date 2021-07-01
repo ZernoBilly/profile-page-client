@@ -17,25 +17,27 @@ const Cards = ({ setCurrentId, setFormOpen }) => {
   return !cards.length ? (
     <CircularProgress />
   ) : (
-    <Grid
-      container
-      MaxWidth="lg"
-      className={classes.container}
-      alignItems="stretch"
-      spacing={3}
-      id="project-cards"
-    >
-      {cards.map((card) => (
-        <Grid item key={card._id} xs={12} sm={4} md={4}>
-          <SingleCard
-            card={card}
-            setCurrentId={setCurrentId}
-            setFormOpen={setFormOpen}
-            checked={checked}
-          />
-        </Grid>
-      ))}
-    </Grid>
+    <div classname={classes.mainContainer}>
+      <Grid
+        container
+        MaxWidth="lg"
+        className={classes.container}
+        alignItems="stretch"
+        spacing={3}
+        id="project-cards"
+      >
+        {cards.map((card) => (
+          <Grid item key={card._id} xs={12} sm={4} md={4}>
+            <SingleCard
+              card={card}
+              setCurrentId={setCurrentId}
+              setFormOpen={setFormOpen}
+              checked={checked}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </div>
   );
 };
 
