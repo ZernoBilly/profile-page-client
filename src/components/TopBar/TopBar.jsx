@@ -27,7 +27,7 @@ function HideOnScroll(props) {
   );
 }
 
-const TopBar = ({ toggleSideMenu, setState }) => {
+const TopBar = ({ toggleSideMenu, handleLoginFormOpen }) => {
   const classes = useStyles();
 
   return (
@@ -54,7 +54,11 @@ const TopBar = ({ toggleSideMenu, setState }) => {
             </Typography>
           </NavLink>
 
-          <Button color="inherit" className={classes.loginButton}>
+          <Button
+            color="inherit"
+            className={classes.loginButton}
+            onClick={handleLoginFormOpen}
+          >
             Login
           </Button>
         </Toolbar>

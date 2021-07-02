@@ -19,8 +19,6 @@ import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined"
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import moment from "moment";
 import { useDispatch } from "react-redux";
-
-//Action to Delete button
 import { deleteCard } from "../../../actions/cards";
 
 import useStyles from "./styles";

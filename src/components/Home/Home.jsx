@@ -15,7 +15,9 @@ import Cards from "../Cards/Cards";
 import Form from "../Form/Form";
 import Header from "../Header/Header";
 import SideMenu from "../SideMenu/SideMenu";
+import LowerSection from "../LowerSection/LowerSection";
 import Description from "../Description/Description";
+import LoginForm from "../LoginForm/LoginForm";
 
 import { getCards } from "../../actions/cards";
 import useStyles from "./styles";
@@ -24,6 +26,17 @@ const Home = () => {
   const [currentId, setCurrentId] = useState(null);
   const classes = useStyles();
   const dispatch = useDispatch();
+
+  //Login form open handler
+  const [loginForm, setLoginFormOpen] = useState(false);
+
+  const handleLoginFormOpen = () => {
+    setLoginFormOpen(true);
+  };
+
+  const handleLoginFormClose = () => {
+    setLoginFormOpen(false);
+  };
 
   //Form open handler
   const [open, setFormOpen] = useState(false);
@@ -49,8 +62,15 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
-      <TopBar toggleSideMenu={toggleSideMenu} />
-      <SideMenu toggleSideMenu={toggleSideMenu} sideMenuOpen={sideMenuOpen} />
+      <TopBar
+        toggleSideMenu={toggleSideMenu}
+        handleLoginFormOpen={handleLoginFormOpen}
+      />
+      <SideMenu
+        toggleSideMenu={toggleSideMenu}
+        sideMenuOpen={sideMenuOpen}
+        handleClickOpen={handleClickOpen}
+      />
       <Container MaxWidth="lg">
         <Header />
         <Description />
@@ -64,28 +84,20 @@ const Home = () => {
             <Grid item xs={12} sm={12} className={classes.cards}>
               <Cards setCurrentId={setCurrentId} setFormOpen={setFormOpen} />
             </Grid>
-            <Grid item>
-              <Button onClick={handleClickOpen}>Add New</Button>
-            </Grid>
           </Grid>
         </Grow>
-        <Grid
-          container
-          justify="space-between"
-          alignItems="stretch"
-          spacing={1}
-        >
-          <Grid item xs={12} sm={12}>
-            <Dialog open={open} onClose={handleClose}>
-              <Form
-                currentId={currentId}
-                setCurrentId={setCurrentId}
-                setFormOpen={setFormOpen}
-              />
-            </Dialog>
-          </Grid>
-        </Grid>
+        <LowerSection />
       </Container>
+      <LoginForm
+        loginForm={loginForm}
+        handleLoginFormClose={handleLoginFormClose}
+      />
+      <Form
+        currentId={currentId}
+        setCurrentId={setCurrentId}
+        open={open}
+        setFormOpen={setFormOpen}
+      />
     </div>
   );
 };

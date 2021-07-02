@@ -11,4 +11,5 @@ export default makeStyles((theme) => ({
     width: "auto",
   },
   listItemText: {},
+  addNewItem: {},
 }));

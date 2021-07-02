@@ -4,18 +4,19 @@ export default makeStyles({
   form: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center",
+    justifyContent: "space-between",
   },
 
   title: {},
-
-  exitButton: {
-    float: "right",
-  },
 
   textField: {},
 
   fileSelector: {
     paddingTop: "15px",
+  },
+  buttons: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: "97%",
   },
 });

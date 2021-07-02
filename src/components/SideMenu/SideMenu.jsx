@@ -8,12 +8,13 @@ import ContactMailIcon from "@material-ui/icons/ContactMail";
 import HelpIcon from "@material-ui/icons/Help";
 import ChatIcon from "@material-ui/icons/Chat";
 import HomeIcon from "@material-ui/icons/Home";
+import AddBoxIcon from "@material-ui/icons/AddBox";
 import Drawer from "@material-ui/core/Drawer";
 
 import useStyles from "./styles";
 import { Typography } from "@material-ui/core";
 
-const SideMenu = ({ toggleSideMenu, sideMenuOpen }) => {
+const SideMenu = ({ toggleSideMenu, sideMenuOpen, handleClickOpen }) => {
   const classes = useStyles();
 
   return (
@@ -48,6 +49,18 @@ const SideMenu = ({ toggleSideMenu, sideMenuOpen }) => {
               <ContactMailIcon />
             </ListItemIcon>
             <ListItemText primary="Contact me" />
+          </ListItem>
+          <Divider />
+          <ListItem
+            button
+            key="Create new Project"
+            className={classes.addNewItem}
+            onClick={handleClickOpen}
+          >
+            <ListItemIcon>
+              <AddBoxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Create new Project" />
           </ListItem>
         </List>
       </Drawer>
