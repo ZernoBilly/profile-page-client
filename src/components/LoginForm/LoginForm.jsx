@@ -1,24 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Visibility from "@material-ui/icons/Visibility";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import IconButton from "@material-ui/core/IconButton";
-import Input from "@material-ui/core/Input";
 
 import useStyles from "./styles";
 
-const LoginForm = ({ loginForm, handleLoginFormClose }) => {
+const LoginForm = ({
+  isSignup,
+  setSignup,
+  loginForm,
+  handleLoginFormClose,
+}) => {
   const classes = useStyles();
 
-  const isSignup = false;
+  const adminUser = {
+    username: "admin",
+    password: "admin123",
+  };
 
-  const handleSubmit = () => {};
+  const initialState = { username: "", password: "" };
+
+  const [form, setForm] = useState(initialState);
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      form.username == adminUser.username &&
+      form.password == adminUser.password
+    ) {
+      setSignup(true);
+    }
+  };
+
+  console.log(isSignup);
 
   return (
     <Dialog open={loginForm} onClose={handleLoginFormClose}>
@@ -26,18 +47,22 @@ const LoginForm = ({ loginForm, handleLoginFormClose }) => {
         <DialogTitle id="form-dialog-title">Login</DialogTitle>
         <DialogContent>
           <TextField
+            onChange={handleChange}
             autoFocus
             margin="dense"
-            id="name"
+            id="username"
             label="Username"
             type="username"
+            name="username"
             fullWidth
           />
           <TextField
+            onChange={handleChange}
             margin="dense"
-            id="name"
+            id="password"
             label="Password"
             type="password"
+            name="password"
             fullWidth
           />
         </DialogContent>
@@ -45,7 +70,7 @@ const LoginForm = ({ loginForm, handleLoginFormClose }) => {
           <Button onClick={handleLoginFormClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleLoginFormClose} color="primary">
+          <Button type="submit" onClick={handleLoginFormClose} color="primary">
             Login
           </Button>
         </DialogActions>

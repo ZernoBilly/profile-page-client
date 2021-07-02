@@ -27,6 +27,9 @@ const Home = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
+  //Login
+  const [isSignup, setSignup] = useState(false);
+
   //Login form open handler
   const [loginForm, setLoginFormOpen] = useState(false);
 
@@ -89,6 +92,8 @@ const Home = () => {
         <LowerSection />
       </Container>
       <LoginForm
+        isSignup={isSignup}
+        setSignup={setSignup}
         loginForm={loginForm}
         handleLoginFormClose={handleLoginFormClose}
       />
