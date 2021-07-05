@@ -23,7 +23,7 @@ import { deleteCard } from "../../../actions/cards";
 
 import useStyles from "./styles";
 
-const SingleCard = ({ card, setCurrentId, setFormOpen, checked }) => {
+const SingleCard = ({ card, setCurrentId, setFormOpen, checked, isSignup }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -56,7 +56,7 @@ const SingleCard = ({ card, setCurrentId, setFormOpen, checked }) => {
           className={classes.header}
           action={
             <div>
-              <IconButton onClick={handleClick}>
+              <IconButton onClick={handleClick} disabled={!isSignup}>
                 <MoreVertIcon />
               </IconButton>
               <Menu

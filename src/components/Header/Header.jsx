@@ -34,7 +34,7 @@ const Header = () => {
           My <span className={classes.coloredTitle}>ProfilePage</span>
         </Typography>
 
-        <Scroll to="project-cards" smooth={true}>
+        <Scroll to="description" smooth={true}>
           <IconButton className={classes.downButton} size="large">
             <ExpandMoreIcon />
           </IconButton>

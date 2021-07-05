@@ -6,7 +6,7 @@ import SingleCard from "./SingleCard/SingleCard";
 import useStyles from "./styles";
 import useWindowPosition from "../../Hook/useWindowPosition";
 
-const Cards = ({ setCurrentId, setFormOpen }) => {
+const Cards = ({ setCurrentId, setFormOpen, isSignup }) => {
   const cards = useSelector((state) => state.cards); //Fetch data from all cards
   const classes = useStyles();
 
@@ -33,6 +33,7 @@ const Cards = ({ setCurrentId, setFormOpen }) => {
               setCurrentId={setCurrentId}
               setFormOpen={setFormOpen}
               checked={checked}
+              isSignup={isSignup}
             />
           </Grid>
         ))}

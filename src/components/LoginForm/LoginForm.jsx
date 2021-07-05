@@ -5,6 +5,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import dotenv from "dotenv";
 
 import useStyles from "./styles";
 
@@ -15,10 +16,11 @@ const LoginForm = ({
   handleLoginFormClose,
 }) => {
   const classes = useStyles();
+  dotenv.config();
 
   const adminUser = {
-    username: "admin",
-    password: "admin123",
+    username: process.env.REACT_APP_USERNAME,
+    password: process.env.REACT_APP_PASSWORD,
   };
 
   const initialState = { username: "", password: "" };

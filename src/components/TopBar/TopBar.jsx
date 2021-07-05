@@ -12,12 +12,10 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 
 import useStyles from "./styles";
+import { LocalDiningOutlined } from "@material-ui/icons";
 
 function HideOnScroll(props) {
   const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
   const trigger = useScrollTrigger({ target: window ? window() : undefined });
 
   return (
@@ -27,8 +25,22 @@ function HideOnScroll(props) {
   );
 }
 
-const TopBar = ({ toggleSideMenu, handleLoginFormOpen }) => {
+const TopBar = ({
+  toggleSideMenu,
+  handleLoginFormOpen,
+  isSignup,
+  setSignup,
+}) => {
   const classes = useStyles();
+
+  //Handle signin button text
+  const toggleSignin = () => {
+    if (!isSignup) {
+      return "Login";
+    } else {
+      return "Logout";
+    }
+  };
 
   return (
     <HideOnScroll>
@@ -59,7 +71,7 @@ const TopBar = ({ toggleSideMenu, handleLoginFormOpen }) => {
             className={classes.loginButton}
             onClick={handleLoginFormOpen}
           >
-            Login
+            {toggleSignin()}
           </Button>
         </Toolbar>
       </AppBar>

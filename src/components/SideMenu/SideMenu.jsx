@@ -14,7 +14,12 @@ import Drawer from "@material-ui/core/Drawer";
 import useStyles from "./styles";
 import { Typography } from "@material-ui/core";
 
-const SideMenu = ({ toggleSideMenu, sideMenuOpen, handleClickOpen }) => {
+const SideMenu = ({
+  toggleSideMenu,
+  sideMenuOpen,
+  handleClickOpen,
+  isSignup,
+}) => {
   const classes = useStyles();
 
   return (
@@ -56,6 +61,7 @@ const SideMenu = ({ toggleSideMenu, sideMenuOpen, handleClickOpen }) => {
             key="Create new Project"
             className={classes.addNewItem}
             onClick={handleClickOpen}
+            disabled={!isSignup}
           >
             <ListItemIcon>
               <AddBoxIcon />

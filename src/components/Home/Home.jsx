@@ -68,15 +68,18 @@ const Home = () => {
       <TopBar
         toggleSideMenu={toggleSideMenu}
         handleLoginFormOpen={handleLoginFormOpen}
+        isSignup={isSignup}
+        setSignup={setSignup}
       />
       <SideMenu
         toggleSideMenu={toggleSideMenu}
         sideMenuOpen={sideMenuOpen}
         handleClickOpen={handleClickOpen}
+        isSignup={isSignup}
       />
       <Container MaxWidth="lg">
         <Header />
-        <Description />
+
         <Grow in>
           <Grid
             container
@@ -84,8 +87,13 @@ const Home = () => {
             alignItems="stretch"
             spacing={1}
           >
+            <Description />
             <Grid item xs={12} sm={12} className={classes.cards}>
-              <Cards setCurrentId={setCurrentId} setFormOpen={setFormOpen} />
+              <Cards
+                setCurrentId={setCurrentId}
+                setFormOpen={setFormOpen}
+                isSignup={isSignup}
+              />
             </Grid>
           </Grid>
         </Grow>
