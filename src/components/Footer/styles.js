@@ -15,6 +15,7 @@ export default makeStyles((theme) => ({
   },
   iconButtons: {
     color: theme.palette.optional.main,
+    margin: "0 0.4rem 0 0.4rem",
   },
   copyrigthTitle: {
     marginTop: "0.5rem",

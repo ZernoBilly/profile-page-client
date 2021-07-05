@@ -11,12 +11,14 @@ import {
   Button,
   Menu,
   MenuItem,
-  Collapse,
+  Tooltip,
   Fade,
 } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import DeleteForeverOutlinedIcon from "@material-ui/icons/DeleteForeverOutlined";
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import { deleteCard } from "../../../actions/cards";
@@ -102,26 +104,27 @@ const SingleCard = ({ card, setCurrentId, setFormOpen, checked, isSignup }) => {
             {card.description}
           </Typography>
         </CardContent>
-        <CardActions className={classes.buttons}>
-          <Button
-            variant="contained"
-            className={classes.buttons}
-            size="small"
-            href={card.url}
-            target="_blank"
-            //color="secondary"
-          >
-            Learn More
-          </Button>
-          <Button
-            variant="contained"
-            size="small"
-            href={card.gitHub}
-            target="_blank"
-            //color="secondary"
-          >
-            Source Code
-          </Button>
+        <CardActions className={classes.buttonContainer}>
+          <Tooltip title="Try Now" placement="right">
+            <Button
+              variant="contained"
+              className={classes.actionButtons}
+              href={card.url}
+              target="_blank"
+            >
+              <PlayCircleFilledIcon />
+            </Button>
+          </Tooltip>
+          <Tooltip title="GitHub" placement="left">
+            <Button
+              variant="contained"
+              className={classes.actionButtons}
+              href={card.gitHub}
+              target="_blank"
+            >
+              <GitHubIcon />
+            </Button>
+          </Tooltip>
         </CardActions>
       </Card>
     </Fade>

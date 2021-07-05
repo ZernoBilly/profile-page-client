@@ -1,4 +1,3 @@
-import { blue, red } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
@@ -10,7 +9,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    borderRadius: "15px",
+    borderRadius: "0.3rem",
     position: "relative",
     backgroundColor: theme.palette.secondary.extraLight,
   },
@@ -19,9 +18,19 @@ export default makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.primary.dark,
   },
-  buttons: {
+  buttonContainer: {
     justifyContent: "space-between",
-    //color: theme.palette.info.main,
+    margin: "0.3rem",
+  },
+  actionButtons: {
+    size: "3rem",
+    borderRadius: "8rem",
+    color: theme.palette.success.light,
+    backgroundColor: theme.palette.primary.main,
+
+    "$:hover": {
+      backgroundColor: theme.palette.primary.dark,
+    },
   },
   menu: {
     color: "#1BA098",

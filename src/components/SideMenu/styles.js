@@ -1,8 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-  root: {
-    color: theme.palette.primary.light,
+  drawer: {
+    backgroundColor: theme.palette.secondary.extraLight,
   },
   list: {
     width: 250,
@@ -10,6 +10,10 @@ export default makeStyles((theme) => ({
   fullList: {
     width: "auto",
   },
-  listItemText: {},
-  addNewItem: {},
+  listItemText: {
+    color: theme.palette.primary.dark,
+  },
+  drawerIcons: {
+    color: theme.palette.optional.dark,
+  },
 }));

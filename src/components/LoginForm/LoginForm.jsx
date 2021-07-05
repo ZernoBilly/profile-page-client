@@ -27,9 +27,11 @@ const LoginForm = ({
 
   const [form, setForm] = useState(initialState);
 
+  //Form text field update handler
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
+  //Form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -41,12 +43,16 @@ const LoginForm = ({
     }
   };
 
-  console.log(isSignup);
-
   return (
-    <Dialog open={loginForm} onClose={handleLoginFormClose}>
+    <Dialog
+      open={loginForm}
+      onClose={handleLoginFormClose}
+      classes={{ paper: classes.loginForm }}
+    >
       <form onSubmit={handleSubmit}>
-        <DialogTitle id="form-dialog-title">Login</DialogTitle>
+        <DialogTitle id="form-dialog-title" className={classes.title}>
+          Login
+        </DialogTitle>
         <DialogContent>
           <TextField
             onChange={handleChange}
@@ -68,11 +74,15 @@ const LoginForm = ({
             fullWidth
           />
         </DialogContent>
-        <DialogActions className={classes.buttons}>
-          <Button onClick={handleLoginFormClose} color="primary">
+        <DialogActions className={classes.buttonContainer}>
+          <Button onClick={handleLoginFormClose} className={classes.buttons}>
             Cancel
           </Button>
-          <Button type="submit" onClick={handleLoginFormClose} color="primary">
+          <Button
+            type="submit"
+            onClick={handleLoginFormClose}
+            className={classes.buttons}
+          >
             Login
           </Button>
         </DialogActions>

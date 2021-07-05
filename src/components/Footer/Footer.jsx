@@ -17,7 +17,7 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <footer>
+    <footer id="footer">
       <Box className={classes.mainBox}>
         <Container>
           <Grid container spacing={2} className={classes.gridContainer}>

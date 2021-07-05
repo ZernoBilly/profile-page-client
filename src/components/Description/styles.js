@@ -8,15 +8,20 @@ export default makeStyles((theme) => ({
     textAlign: "center",
     margin: "5rem 0 5rem 0",
   },
+  descriptionTextGridItem: {
+    marginTop: "0.5rem",
+  },
   descriptionText: {
-    marginTop: "3rem",
+    fontFamily: "Poiret One",
+    color: theme.palette.secondary.light,
+    margin: "0.5rem",
   },
   logoContainer: {
     display: "flex",
     justifyContent: "space-between",
   },
-  logoGridItem: {
-    borderBottom: "2px solid",
+  logoBox: {
+    borderColor: theme.palette.secondary.dark,
   },
   logos: {
     margin: "2rem",

@@ -46,6 +46,10 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: ["Roboto", "Arizonia", "Poiret One", "Squada One"],
   },
+
+  shape: {
+    borderRadius: "2px",
+  },
 });
 
 export default theme;

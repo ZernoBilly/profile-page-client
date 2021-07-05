@@ -19,7 +19,7 @@ export default makeStyles((theme) => ({
     color: theme.palette.optional.main,
   },
   downButton: {
-    marginTop: "20rem",
+    marginTop: "22rem",
     color: theme.palette.optional.main,
     width: "5rem",
   },

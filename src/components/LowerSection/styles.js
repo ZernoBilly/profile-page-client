@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
+    margin: "2rem",
   },
   upButton: {
     color: theme.palette.optional.main,
