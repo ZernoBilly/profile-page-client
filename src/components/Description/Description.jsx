@@ -1,12 +1,9 @@
 import React from "react";
 import { Grid, Typography, Divider, Box } from "@material-ui/core";
-import Image from "material-ui-image";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiNextDotJs, SiDjango, SiMaterialUi, SiMongodb } from "react-icons/si";
 
 import useStyles from "./styles";
-
-import reactLogo from "./Logo-pictures/React-icon.svg.png";
 
 const Description = () => {
   const classes = useStyles();

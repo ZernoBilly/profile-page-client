@@ -6,9 +6,13 @@ export default makeStyles((theme) => ({
     padding: "0",
     backgroundColor: theme.palette.primary.dark,
   },
-  title: {
+  titleLink: {
     flexGrow: 1,
     textDecoration: "none",
+
+    textAlign: "center",
+  },
+  title: {
     color: theme.palette.optional.main,
     fontFamily: "Arizonia",
   },

@@ -60,7 +60,7 @@ const TopBar = ({
           >
             <MenuIcon />
           </IconButton>
-          <NavLink to="/" className={classes.title}>
+          <NavLink to="/" className={classes.titleLink}>
             <Typography variant="h6" className={classes.title}>
               HK
             </Typography>

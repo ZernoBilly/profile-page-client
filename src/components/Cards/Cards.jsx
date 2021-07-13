@@ -7,9 +7,10 @@ import useStyles from "./styles";
 import useWindowPosition from "../../Hook/useWindowPosition";
 
 const Cards = ({ setCurrentId, setFormOpen, isSignup }) => {
-  const cards = useSelector((state) => state.cards); //Fetch data from all cards
+  const cards = useSelector((state) => state.cards); //Fetched data from all cards
   const classes = useStyles();
 
+  //Window position function
   const checked = useWindowPosition("header");
 
   console.log(cards);

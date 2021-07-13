@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
+import {
+  List,
+  Divider,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Drawer,
+} from "@material-ui/core";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import HelpIcon from "@material-ui/icons/Help";
 import ChatIcon from "@material-ui/icons/Chat";
 import HomeIcon from "@material-ui/icons/Home";
 import AddBoxIcon from "@material-ui/icons/AddBox";
-import Drawer from "@material-ui/core/Drawer";
+import { Link } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
 
 import useStyles from "./styles";
-import { Typography } from "@material-ui/core";
 
 const SideMenu = ({
   toggleSideMenu,
@@ -32,13 +34,13 @@ const SideMenu = ({
         classes={{ paper: classes.drawer }}
       >
         <List className={classes.list} FullHeight>
-          <ListItem button key="Home">
+          <ListItem button key="Home" component={Link} to="/">
             <ListItemIcon className={classes.drawerIcons}>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" className={classes.listItemText} />
           </ListItem>
-          <ListItem button key="About me">
+          <ListItem button key="About me" component={Link} to="/about">
             <ListItemIcon className={classes.drawerIcons}>
               <HelpIcon />
             </ListItemIcon>

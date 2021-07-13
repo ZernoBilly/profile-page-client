@@ -4,7 +4,7 @@ import { ThemeProvider } from "@material-ui/core";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "./components/Home/Home";
-import Form from "./components/Form/Form";
+import AboutMe from "./components/AboutMe/AboutMe";
 import Footer from "./components/Footer/Footer";
 
 import useStyles from "./styles";
@@ -19,7 +19,7 @@ const App = () => {
         <Container maxWidth="xl" className={classes.root}>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/form" component={Form} />
+            <Route path="/about" component={AboutMe} />
           </Switch>
         </Container>
         <Footer />
