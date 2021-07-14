@@ -36,8 +36,8 @@ const LoginForm = ({
     e.preventDefault();
 
     if (
-      form.username == adminUser.username &&
-      form.password == adminUser.password
+      form.username === adminUser.username &&
+      form.password === adminUser.password
     ) {
       setSignup(true);
     }

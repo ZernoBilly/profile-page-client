@@ -18,6 +18,7 @@ import SideMenu from "../SideMenu/SideMenu";
 import LowerSection from "../LowerSection/LowerSection";
 import Description from "../Description/Description";
 import LoginForm from "../LoginForm/LoginForm";
+import Footer from "../Footer/Footer";
 
 import { getCards } from "../../actions/cards";
 import useStyles from "./styles";
@@ -111,11 +112,9 @@ const Home = () => {
         open={open}
         setFormOpen={setFormOpen}
       />
+      <Footer />
     </div>
   );
 };
 
 export default Home;
-
-//<Grid item xs={12} sm={4}>
-//<Form currentId={currentId} setCurrentId={setCurrentId} />

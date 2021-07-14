@@ -10,8 +10,8 @@ const AboutMe = () => {
   const classes = useStyles();
 
   return (
-    <Container className={classes.rootContainer} MaxWidth="lg">
-      <Grid container className={classes.mainContainer} MaxWidth="lg">
+    <Container className={classes.rootContainer} maxWidth="xl">
+      <Grid container className={classes.mainContainer}>
         <AboutMeHeader />
         <AboutMeCards />
       </Grid>

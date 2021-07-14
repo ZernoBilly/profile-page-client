@@ -4,13 +4,11 @@ export default makeStyles((theme) => ({
   rootContainer: {
     margin: "0",
     padding: "0",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
   },
-  mainContainer: {
+  mainContainer: {},
+  grid: {
+    height: "10rem",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
   },
 }));
