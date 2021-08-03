@@ -3,7 +3,6 @@ import {
   Grid,
   Container,
   Box,
-  Link,
   IconButton,
   Typography,
 } from "@material-ui/core";

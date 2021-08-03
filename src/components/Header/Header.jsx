@@ -19,7 +19,7 @@ const Header = () => {
     <div className={classes.titleContainer} id="header">
       <Collapse
         in={checked}
-        {...(checked ? { timeout: 800 } : {})}
+        {...(checked ? { timeout: 2000 } : {})}
         collapsedHeight={50}
       >
         <Typography

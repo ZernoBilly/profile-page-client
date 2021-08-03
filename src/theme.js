@@ -50,6 +50,16 @@ const theme = createMuiTheme({
   shape: {
     borderRadius: "2px",
   },
+
+  probs: {
+    MuiLinearProgress: {
+      root: {
+        barColorPrimary: {
+          backgroundColor: "#48b3ac",
+        },
+      },
+    },
+  },
 });
 
 export default theme;

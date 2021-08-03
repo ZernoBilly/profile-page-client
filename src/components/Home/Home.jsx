@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {
-  Grid,
-  Container,
-  Grow,
-  Button,
-  Dialog,
-  Typography,
-} from "@material-ui/core";
-import Image from "material-ui-image";
+import { Grid, Container, Grow } from "@material-ui/core";
 
 import TopBar from "../TopBar/TopBar";
 import Cards from "../Cards/Cards";
@@ -19,6 +11,7 @@ import LowerSection from "../LowerSection/LowerSection";
 import Description from "../Description/Description";
 import LoginForm from "../LoginForm/LoginForm";
 import Footer from "../Footer/Footer";
+import Skills from "../Skills/Skills";
 
 import { getCards } from "../../actions/cards";
 import useStyles from "./styles";
@@ -47,10 +40,6 @@ const Home = () => {
 
   const handleClickOpen = () => {
     setFormOpen(true);
-  };
-
-  const handleClose = () => {
-    setFormOpen(false);
   };
 
   useEffect(() => {
@@ -98,8 +87,10 @@ const Home = () => {
             </Grid>
           </Grid>
         </Grow>
-        <LowerSection />
       </Container>
+      <Skills />
+      <LowerSection />
+
       <LoginForm
         isSignup={isSignup}
         setSignup={setSignup}

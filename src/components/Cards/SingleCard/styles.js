@@ -23,13 +23,13 @@ export default makeStyles((theme) => ({
     margin: "0.3rem",
   },
   actionButtons: {
-    size: "3rem",
     borderRadius: "8rem",
-    color: theme.palette.success.light,
+    color: theme.palette.secondary.light,
     backgroundColor: theme.palette.primary.main,
 
-    "$:hover": {
-      backgroundColor: theme.palette.primary.dark,
+    "&:hover": {
+      backgroundColor: theme.palette.success.main,
+      color: theme.palette.primary.main,
     },
   },
   menu: {

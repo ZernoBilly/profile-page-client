@@ -18,7 +18,7 @@ const Cards = ({ setCurrentId, setFormOpen, isSignup }) => {
   return !cards.length ? (
     <CircularProgress />
   ) : (
-    <div classname={classes.mainContainer}>
+    <div className={classes.mainContainer}>
       <Grid
         container
         MaxWidth="lg"

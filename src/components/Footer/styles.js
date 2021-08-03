@@ -16,6 +16,11 @@ export default makeStyles((theme) => ({
   iconButtons: {
     color: theme.palette.optional.main,
     margin: "0 0.4rem 0 0.4rem",
+
+    "&:hover": {
+      backgroundColor: theme.palette.success.main,
+      color: theme.palette.primary.main,
+    },
   },
   copyrigthTitle: {
     marginTop: "0.5rem",

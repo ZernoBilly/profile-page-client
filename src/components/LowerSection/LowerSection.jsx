@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as Scroll } from "react-scroll";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import { Typography, IconButton } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 
 import useStyles from "./styles";
 

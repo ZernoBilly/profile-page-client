@@ -1,7 +1,12 @@
 import React from "react";
-import { Grid, Typography, Divider, Box } from "@material-ui/core";
+import { Grid, Typography, Box } from "@material-ui/core";
 import { FaReact, FaNodeJs } from "react-icons/fa";
-import { SiNextDotJs, SiDjango, SiMaterialUi, SiMongodb } from "react-icons/si";
+import {
+  SiDjango,
+  SiMaterialUi,
+  SiMongodb,
+  SiTypescript,
+} from "react-icons/si";
 
 import useStyles from "./styles";
 
@@ -32,7 +37,7 @@ const Description = () => {
         <Box className={classes.logoBox} borderBottom={1}>
           <FaReact className={classes.logos} title="React" />
           <FaNodeJs className={classes.logos} title="Node.js" />
-          <SiNextDotJs className={classes.logos} title="Next.js" />
+          <SiTypescript className={classes.logos} title="TypeScript" />
           <SiDjango className={classes.logos} title="Django" />
           <SiMaterialUi className={classes.logos} title="Material ui" />
           <SiMongodb className={classes.logos} title="Mongodb" />

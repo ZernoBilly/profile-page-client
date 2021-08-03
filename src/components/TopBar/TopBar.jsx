@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -12,7 +12,6 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 
 import useStyles from "./styles";
-import { LocalDiningOutlined } from "@material-ui/icons";
 
 function HideOnScroll(props) {
   const { children, window } = props;
