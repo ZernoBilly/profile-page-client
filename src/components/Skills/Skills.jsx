@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, Box } from "@material-ui/core";
 
 import SkillCard from "./SkillCard/SkillCard";
 
@@ -15,7 +15,7 @@ const skills = [
       },
       {
         skill: "React",
-        progress: 80,
+        progress: 85,
       },
       {
         skill: "Material Ui",
@@ -23,7 +23,7 @@ const skills = [
       },
       {
         skill: "HTML5 & CSS",
-        progress: 70,
+        progress: 80,
       },
       {
         skill: "TypeScript",
@@ -45,7 +45,7 @@ const skills = [
 
       {
         skill: "MongoDB",
-        progress: 60,
+        progress: 40,
       },
       {
         skill: "TypeScript",
@@ -63,19 +63,19 @@ const skills = [
 
       {
         skill: "AWS EC2",
-        progress: 40,
+        progress: 20,
       },
       {
         skill: "Hostinger VPS",
-        progress: 50,
+        progress: 80,
       },
       {
         skill: "Nginx",
-        progress: 60,
+        progress: 80,
       },
       {
         skill: "Apache",
-        progress: 30,
+        progress: 10,
       },
     ],
   },
@@ -85,11 +85,13 @@ const Skills = () => {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={2} className={classes.skillsContainer}>
+    <Grid container spacing={3} className={classes.skillsContainer} id="skills">
       <Grid item xs={12} className={classes.header}>
-        <Typography className={classes.headerText} variant="h4">
-          Leveling Up
-        </Typography>
+        <Box className={classes.titleBox} borderBottom={1}>
+          <Typography className={classes.headerText} variant="h4">
+            Leveling Up
+          </Typography>
+        </Box>
       </Grid>
       {skills.map((sc) => (
         <Grid item xs={12} sm={3}>

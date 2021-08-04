@@ -12,6 +12,7 @@ import Description from "../Description/Description";
 import LoginForm from "../LoginForm/LoginForm";
 import Footer from "../Footer/Footer";
 import Skills from "../Skills/Skills";
+import Education from "../Education/Education";
 
 import { getCards } from "../../actions/cards";
 import useStyles from "./styles";
@@ -89,6 +90,7 @@ const Home = () => {
         </Grow>
       </Container>
       <Skills />
+      <Education />
       <LowerSection />
 
       <LoginForm

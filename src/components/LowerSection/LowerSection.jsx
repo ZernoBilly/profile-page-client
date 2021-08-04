@@ -1,7 +1,6 @@
 import React from "react";
 import { Link as Scroll } from "react-scroll";
-import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import { IconButton } from "@material-ui/core";
+import { IconButton, Typography } from "@material-ui/core";
 
 import useStyles from "./styles";
 
@@ -12,7 +11,7 @@ const LowerSection = () => {
     <div className={classes.lowerSectionContainer}>
       <Scroll to="header" smooth={true}>
         <IconButton className={classes.upButton} size="large">
-          <ExpandLessIcon />
+          <Typography className={classes.text}>Back to Top</Typography>
         </IconButton>
       </Scroll>
     </div>

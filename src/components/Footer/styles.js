@@ -16,6 +16,7 @@ export default makeStyles((theme) => ({
   iconButtons: {
     color: theme.palette.optional.main,
     margin: "0 0.4rem 0 0.4rem",
+    transition: "background-color 0.3s, color 0.3s",
 
     "&:hover": {
       backgroundColor: theme.palette.success.main,

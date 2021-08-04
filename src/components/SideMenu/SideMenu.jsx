@@ -12,6 +12,7 @@ import HelpIcon from "@material-ui/icons/Help";
 import ChatIcon from "@material-ui/icons/Chat";
 import HomeIcon from "@material-ui/icons/Home";
 import AddBoxIcon from "@material-ui/icons/AddBox";
+import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import { Link } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
 
@@ -40,19 +41,23 @@ const SideMenu = ({
             </ListItemIcon>
             <ListItemText primary="Home" className={classes.listItemText} />
           </ListItem>
-          <ListItem button key="About me" component={Link} to="/about">
-            <ListItemIcon className={classes.drawerIcons}>
-              <HelpIcon />
-            </ListItemIcon>
-            <ListItemText primary="About me" />
-          </ListItem>
           <Divider />
-          <ListItem button key="Leave message">
-            <ListItemIcon className={classes.drawerIcons}>
-              <ChatIcon />
-            </ListItemIcon>
-            <ListItemText primary="Leave message" />
-          </ListItem>
+          <Scroll to="description" smooth={true}>
+            <ListItem button key="My Projects" onClick={toggleSideMenu(false)}>
+              <ListItemIcon className={classes.drawerIcons}>
+                <AccountTreeIcon />
+              </ListItemIcon>
+              <ListItemText primary="My Projects" />
+            </ListItem>
+          </Scroll>
+          <Scroll to="skills" smooth={true}>
+            <ListItem button key="My Progress" onClick={toggleSideMenu(false)}>
+              <ListItemIcon className={classes.drawerIcons}>
+                <HelpIcon />
+              </ListItemIcon>
+              <ListItemText primary="My Progress" />
+            </ListItem>
+          </Scroll>
           <Scroll to="footer" smooth={true}>
             <ListItem button key="Contact me" onClick={toggleSideMenu(false)}>
               <ListItemIcon className={classes.drawerIcons}>
@@ -61,6 +66,14 @@ const SideMenu = ({
               <ListItemText primary="Contact me" />
             </ListItem>
           </Scroll>
+          <Divider />
+          <ListItem button key="Leave message">
+            <ListItemIcon className={classes.drawerIcons}>
+              <ChatIcon />
+            </ListItemIcon>
+            <ListItemText primary="Leave message" />
+          </ListItem>
+
           <Divider />
           <ListItem
             button

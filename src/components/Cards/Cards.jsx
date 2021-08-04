@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Grid, CircularProgress } from "@material-ui/core";
+import { Grid, CircularProgress, IconButton } from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Link as Scroll } from "react-scroll";
 
 import SingleCard from "./SingleCard/SingleCard";
 import useStyles from "./styles";
@@ -12,8 +14,6 @@ const Cards = ({ setCurrentId, setFormOpen, isSignup }) => {
 
   //Window position function
   const checked = useWindowPosition("header");
-
-  console.log(cards);
 
   return !cards.length ? (
     <CircularProgress />
@@ -39,6 +39,13 @@ const Cards = ({ setCurrentId, setFormOpen, isSignup }) => {
           </Grid>
         ))}
       </Grid>
+      <div className={classes.scrollIcon}>
+        <Scroll to="skills" smooth={true}>
+          <IconButton className={classes.downButton}>
+            <ExpandMoreIcon />
+          </IconButton>
+        </Scroll>
+      </div>
     </div>
   );
 };

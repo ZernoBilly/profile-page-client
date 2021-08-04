@@ -13,4 +13,10 @@ export default makeStyles((theme) => ({
   scrollText: {
     color: theme.palette.optional.light,
   },
+  text: {
+    fontFamily: "Poiret One",
+    fontColor: theme.palette.primary.dark,
+    fontWeight: "600",
+    fontSize: "1.2rem",
+  },
 }));

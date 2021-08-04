@@ -11,7 +11,6 @@ import useStyles from "./styles";
 
 const SkillCard = ({ title, skills }) => {
   const classes = useStyles();
-  console.log(skills);
 
   return (
     <Card className={classes.card}>
