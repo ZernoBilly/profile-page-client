@@ -27,7 +27,7 @@ const skills = [
       },
       {
         skill: "TypeScript",
-        progress: 30,
+        progress: 40,
       },
     ],
   },
@@ -49,7 +49,7 @@ const skills = [
       },
       {
         skill: "TypeScript",
-        progress: 30,
+        progress: 40,
       },
     ],
   },

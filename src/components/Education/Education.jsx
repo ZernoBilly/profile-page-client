@@ -86,7 +86,7 @@ const Education = () => {
         className={classes.educationItem}
         spacing={2}
       >
-        <Grid item xs={3} className={classes.imageItem}>
+        <Grid item xs={4} sm={3} className={classes.imageItem}>
           <Link
             className={classes.link}
             href="https://openbadgepassport.com/app/badge/info/376464"
@@ -100,7 +100,7 @@ const Education = () => {
             />
           </Link>
         </Grid>
-        <Grid item xs={3} className={classes.imageItem}>
+        <Grid item xs={4} sm={3} className={classes.imageItem}>
           <Link
             href="https://www.hyria.fi/koulutukset/hae_jatkuvassa_haussa/koulutustarjonta/tieto-_ja_viestintatekniikka"
             target="_blank"
@@ -113,7 +113,7 @@ const Education = () => {
             />
           </Link>
         </Grid>
-        <Grid item xs={3} className={classes.imageItem}>
+        <Grid item xs={4} sm={3} className={classes.imageItem}>
           <Link
             href="https://opintopolku.fi/koski/opinnot/2a6de1cfcb604ec8a26058263e7c4a0d"
             target="_blank"

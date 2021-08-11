@@ -51,8 +51,8 @@ export default makeStyles((theme) => ({
   },
   image: {
     color: theme.palette.primary.dark,
-    height: "7rem",
-    width: "7rem",
+    height: "6rem",
+    width: "6rem",
     borderRadius: "0.3rem",
     border: "2px solid",
     borderColor: theme.palette.optional.light,
