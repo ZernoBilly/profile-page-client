@@ -1,6 +1,9 @@
 import axios from "axios";
+import dotenv from "dotenv";
 
-const url = "http://localhost:5000/cards";
+dotenv.config();
+
+const url = process.env.REACT_APP_URL;
 
 //Api requests to server /controllers.
 
