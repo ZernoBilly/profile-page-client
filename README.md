@@ -2,6 +2,11 @@
 
 Goal is to make easy to manage portfolio page
 
+## Deploy
+
+Deployed on ubuntu virtual server using Nginx. https://heskull.com.
+SSL sertificated
+
 ## Features
 
 * GRUD functions
